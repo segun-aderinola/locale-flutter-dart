@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:locale/Onboarding/email_signin.dart';
+import 'package:locale/Onboarding/email_signup.dart';
 
 class OnboardingScreen4 extends StatelessWidget {
   const OnboardingScreen4({super.key});
@@ -96,8 +97,13 @@ class OnboardingScreen4 extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        
                         // Add your onPressed action here
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const EmailSignUp(),
+                          ),
+                        );
                       },
                       child: const Text(
                         'Sign Up',

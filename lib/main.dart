@@ -4,6 +4,7 @@ import 'package:locale/Onboarding/email_signin.dart';
 import 'package:locale/Onboarding/onboarding_screen2.dart';
 import 'package:locale/Onboarding/onboarding_screen3.dart';
 import 'package:locale/Onboarding/onboarding_screen4.dart';
+import 'package:locale/Onboarding/otp_screen.dart';
 import 'splash_screen.dart';
 import 'splash_screen2.dart';  // Import your home screen
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',  // Make sure this route is valid
       routes: {
-        '/': (context) => const SplashScreen(),
+        '/': (context) => const OTPScreen(),
+        // '/': (context) => const SplashScreen(),
         '/splash_screen2': (context) => const SplashScreen2(),
         '/onboarding_screen1': (context) => const OnboardingScreen1(),
         '/onboarding_screen2': (context) => const OnboardingScreen2(),

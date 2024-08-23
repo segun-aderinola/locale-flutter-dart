@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:locale/Onboarding/email_signin.dart';
 import 'package:locale/Onboarding/email_signup.dart';
 import 'package:locale/Onboarding/mobile_signin.dart';
 
-class EmailSignIn extends StatelessWidget {
-  const EmailSignIn({super.key});
+class MobileSignUp extends StatelessWidget {
+  const MobileSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,10 @@ class EmailSignIn extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {
                     // Handle Sign Up
-                    Navigator.push(
+                     Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const EmailSignUp(),
+                            builder: (context) => const EmailSignIn(),
                           ),
                         );
                   },
@@ -41,7 +42,7 @@ class EmailSignIn extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Sign Up',
+                    'Sign In',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -56,7 +57,7 @@ class EmailSignIn extends StatelessWidget {
                 const SizedBox(height: 50),
                 const SizedBox(height: 50),
                 const Text(
-                  'Log in to your account',
+                  'Sign Up to Get Started',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -80,35 +81,10 @@ class EmailSignIn extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           // Handle Sign In with Email
-                          
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF8C6AFF),
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          elevation: 0, // Remove any shadow
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero, // Makes the button rectangular
-                          ),
-                        ),
-                        child: const Text(
-                          'Email',
-                          style: TextStyle(
-                            fontSize: 18,
-                            // fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10), // Optional space between buttons
-                    Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Handle Sign In with Mobile
-                          Navigator.push(
+                           Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const MobileSignIn(),
+                            builder: (context) => const EmailSignUp(),
                           ),
                         );
                         },
@@ -121,11 +97,35 @@ class EmailSignIn extends StatelessWidget {
                           ),
                         ),
                         child: const Text(
-                          'Mobile',
+                          'Email',
                           style: TextStyle(
                             fontSize: 18,
                             // fontWeight: FontWeight.bold,
                             color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10), // Optional space between buttons
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Handle Sign In with Mobile
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF8C6AFF),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          elevation: 0, // Remove any shadow
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero, // Makes the button rectangular
+                          ),
+                        ),
+                        child: const Text(
+                          'Mobile',
+                          style: TextStyle(
+                            fontSize: 18,
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -146,34 +146,23 @@ class EmailSignIn extends StatelessWidget {
                 TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    labelText: 'Password',
+                    labelText: 'Create Password',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: false,
-                          onChanged: (bool? value) {},
-                        ),
-                        const Text('Remember Me'),
-                      ],
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
                     ),
-                    TextButton(
-                      onPressed: () {
-                        // Handle Forgot Password
-                      },
-                      child: const Text('Forgot Password?'),
-                    ),
-                  ],
+                  ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
                     // Handle Sign In
@@ -186,7 +175,7 @@ class EmailSignIn extends StatelessWidget {
                     ),
                   ),
                   child: const Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -204,7 +193,7 @@ class EmailSignIn extends StatelessWidget {
                       onPressed: () {
                         // Handle Google Sign In
                       },
-                      buttonText: 'Sign in with Google',
+                      buttonText: 'Sign up with Google',
                     ),
                     const SizedBox(height: 10),
                     _SocialMediaButton(
@@ -213,7 +202,7 @@ class EmailSignIn extends StatelessWidget {
                       onPressed: () {
                         // Handle Facebook Sign In
                       },
-                      buttonText: 'Sign in with Facebook',
+                      buttonText: 'Sign up with Facebook',
                     ),
                     const SizedBox(height: 10),
                     _SocialMediaButton(
@@ -222,18 +211,9 @@ class EmailSignIn extends StatelessWidget {
                       onPressed: () {
                         // Handle Twitter Sign In
                       },
-                      buttonText: 'Sign in with Twitter',
+                      buttonText: 'Sign up with Twitter',
                     ),
                   ],
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  "Didn’t get the email? Check your spam/junk or resend it. ",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey[600],
-                  ),
                 ),
               ],
               
